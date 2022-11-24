@@ -1,0 +1,11 @@
+FIRST COME FIRST SERVE : 					NP
+	TurnAroundTime = Completion time - Arrival Time	
+	WaitingTime = TurnAroundTime - Burst Time
+SHORTEST JOB FIRST :						P
+	TurnAroundTime = Completion time - Arrival Time	
+	WaitingTime = TurnAroundTime - Burst Time
+	ResponseTime = CPU first time - Arrival_Time
+
+
+
+

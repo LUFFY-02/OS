@@ -1,0 +1,36 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int cap=4;
+    int arr[]   ={7, 0, 1, 2, 0, 3, 0, 4, 2, 3, 0, 3, 2};
+    deque<int>q(cap);
+    deque<int>::iterator itr;
+    int page_faults=0;
+    q.clear();
+    for(int i:arr)
+    {
+        itr=find(q.begin(),q.end(),i);
+        if(!(itr!=q.end()))
+        {
+            if(q.size()==cap)
+            {
+                q.erase(q.begin());
+                q.push_back(i);
+            }
+            else
+            {
+                q.push_back(i);
+            }
+            ++page_faults;
+        }
+        else
+        {
+            q.erase(itr);
+            q.push_back(i);
+        }
+
+    }
+    cout<<page_faults;
+    return 0;
+}
